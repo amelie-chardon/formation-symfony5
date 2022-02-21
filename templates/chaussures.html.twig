@@ -1,0 +1,30 @@
+{# /templates/chaussures.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="page-header">
+        <h1>Intégration d'un formulaire avec champs imbriqués</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>Le résultat de vos essais ci-dessous:</p>
+            {{ form_start(shoe, {'attr': {'novalidate': 'novalidate'}}) }}
+                {{ form_row(shoe.nom) }}
+                {{ form_row(shoe.description) }}
+                {{ form_row(shoe.prix) }}
+                <select>
+                    {% for size in shoe.tailles %}
+                    <option>{{ form_row(number.value) }}</option>
+                    {% endfor %}
+                </select>
+                {{ form_row(shoe.save) }}
+            {{ form_end(shoe) }}
+
+
+
+
+        </div>
+    </div>
+{% endblock %}
