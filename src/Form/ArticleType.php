@@ -29,9 +29,13 @@ class ArticleType extends AbstractType
             ->add('tailles', CollectionType::class, 
                 [
                 'entry_type' => NumberType::class,
+                'label' => 'Tailles',
+                'row_attr' => [
+                    'class' => 'input-group',
+                    ],
                 'allow_add' => true
                 ])
-            ->add('Envoyer', SubmitType::class);
+            ->add('save', SubmitType::class);
     }
     
     /**

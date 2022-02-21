@@ -14,11 +14,11 @@
                 {{ form_row(shoe.nom) }}
                 {{ form_row(shoe.description) }}
                 {{ form_row(shoe.prix) }}
-                <select>
+                <ul>
                     {% for size in shoe.tailles %}
-                    <option>{{ form_row(number.value) }}</option>
+                    <li>{{ form(size) }}</li>
                     {% endfor %}
-                </select>
+                </ul>
                 {{ form_row(shoe.save) }}
             {{ form_end(shoe) }}
 

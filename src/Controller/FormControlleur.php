@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\ArticleType;
 use App\Entity\Article;
 use App\Entity\Number;
-
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Validation;
 
 
@@ -31,13 +31,19 @@ class FormController extends AbstractController
                 echo $violation->getMessage().'<br>';
             }
         }
-
-/*
+        /*
+  
         $article->setNom('Hello World');
         $article->setDescription('Un très court article.');
         $article->setPrix('12');
-        
-*/
+        */
+
+        $tailles=new ArrayCollection(['38','39','40']);
+        $article->setTailles($tailles);
+        $article->getTailles();
+
+       
+
 
         $form = $this->createForm(ArticleType::class, $article);
 
